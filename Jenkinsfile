@@ -23,9 +23,21 @@ pipeline {
                     // publish results of the style analysis
                     recordIssues(tools: [flake8(pattern: 'flake8.log', name: 'PEP8 report', id: "flake8_pylint")])
                     // publish results of the coverage test
-                    HTMLReport('htmlcov', 'index.html', 'Coverage report')
+                    publishHTML([allowMissing: false, 
+                                 alwaysLinkToLastBuild: false, 
+                                 keepAll: true, 
+                                 reportDir: "htmlcov", 
+                                 reportFiles: 'index.html', 
+                                 reportName: 'Coverage report', 
+                                 reportTitles: ''])
                     // publish results of the security check
-                    HTMLReport("./", 'bandit.html', 'Bandit report')
+                    publishHTML([allowMissing: false, 
+                                 alwaysLinkToLastBuild: false, 
+                                 keepAll: true, 
+                                 reportDir: "./", 
+                                 reportFiles: 'bandit.html', 
+                                 reportName: 'Bandit report', 
+                                 reportTitles: ''])
                     sh 'ls -la $WORKSPACE'
                 }
             }
