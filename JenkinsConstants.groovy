@@ -4,10 +4,10 @@ import groovy.transform.Field
 // base_gpu_tag : base docker image for Dockerfile, GPU version
 // dockerfile : what Dockerfile to use for building, can include path, e.g. docker/Dockerfile
 
-//@Field
-//def base_cpu_tag = '"1.12.0-py36"'
 @Field
-def base_gpu_tag = '1.12.0-gpu-py36'
+def base_cpu_tag = '"1.12.0-py36"'
+//@Field
+//def base_gpu_tag = '1.12.0-gpu-py36'
 @Field
 def dockerfile = 'docker/Dockerfile'
 
