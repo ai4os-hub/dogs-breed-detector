@@ -13,17 +13,23 @@ pipeline {
                     buildStages(projectConfig)
                 }
                 sh 'printenv'
-            }
-            post {
-                cleanup {
-                    cleanWs()
-                }
+                sh 'ls -la $WORKSPACE'
             }
         }
         stage('printenv') {
             steps { 
                 script {
                     sh 'printenv'
+                    sh 'ls -la $WORKSPACE'
+                }
+            }
+            post {
+                cleanup {
+                    cleanWs()
+                    script {
+                       sh 'printenv'
+                        sh 'ls -la $WORKSPACE'
+                    }
                 }
             }
         }
