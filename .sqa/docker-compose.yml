@@ -1,0 +1,11 @@
+version: "3.6"
+
+services:
+  dogs-testing:
+    image: "indigodatacloud/ci-images:python3.6"
+    container_name: dogs-testing
+    working_dir: /srv
+    volumes:
+      - type: bind
+        source: ./
+        target: /srv
