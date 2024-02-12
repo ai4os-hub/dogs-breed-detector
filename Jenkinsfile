@@ -16,10 +16,16 @@ pipeline {
                 sh 'ls -la $WORKSPACE'
             }
         }
-        stage('printenv') {
+        stage('Publish results in Jenkins and CleanUp') {
             steps { 
                 script {
-                    sh 'printenv'
+                    // file locations are defined in tox.ini
+                    // publish results of the style analysis
+                    recordIssues(tools: [flake8(pattern: 'flake8.log', name: 'PEP8 report', id: "flake8_pylint")])
+                    // publish results of the coverage test
+                    HTMLReport('htmlcov', 'index.html', 'Coverage report')
+                    // publish results of the security check
+                    HTMLReport("./", 'bandit.html', 'Bandit report')
                     sh 'ls -la $WORKSPACE'
                 }
             }
@@ -27,8 +33,7 @@ pipeline {
                 cleanup {
                     cleanWs()
                     script {
-                       sh 'printenv'
-                        sh 'ls -la $WORKSPACE'
+                       sh 'ls -la $WORKSPACE'
                     }
                 }
             }
