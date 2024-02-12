@@ -37,8 +37,8 @@ pipeline {
                     publishHTML([allowMissing: false, 
                                  alwaysLinkToLastBuild: false, 
                                  keepAll: true, 
-                                 reportDir: "./", 
-                                 reportFiles: 'bandit.html', 
+                                 reportDir: "bandit", 
+                                 reportFiles: 'index.html', 
                                  reportName: 'Bandit report', 
                                  reportTitles: ''])
                     sh 'ls -la $WORKSPACE'
