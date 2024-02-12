@@ -12,10 +12,18 @@ pipeline {
                     projectConfig = pipelineConfig()
                     buildStages(projectConfig)
                 }
+                sh 'printenv'
             }
             post {
                 cleanup {
                     cleanWs()
+                }
+            }
+        }
+        stage('printenv') {
+            steps { 
+                script {
+                    sh 'printenv'
                 }
             }
         }
