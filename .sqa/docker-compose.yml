@@ -1,7 +1,7 @@
 version: "3.6"
 
 services:
-  dogs_breed_det-testing:
+  thisrepo-testing:
     image: "indigodatacloud/ci-images:python3.6"
     container_name: "${BUILD_TAG}"
     hostname: "${BUILD_TAG}"
