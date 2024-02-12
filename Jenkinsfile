@@ -12,8 +12,6 @@ pipeline {
                     projectConfig = pipelineConfig()
                     buildStages(projectConfig)
                 }
-                sh 'printenv'
-                sh 'ls -la $WORKSPACE'
             }
         }
         // (optional) Publish testing results in Jenkins
@@ -41,7 +39,6 @@ pipeline {
                                  reportFiles: 'index.html', 
                                  reportName: 'Bandit report', 
                                  reportTitles: ''])
-                    sh 'ls -la $WORKSPACE'
                 }
             }
         }
@@ -50,9 +47,6 @@ pipeline {
         // Clean after build
         always {
             cleanWs()
-            script {
-                sh 'ls -la $WORKSPACE'
-            } 
         }    
     }
 }
