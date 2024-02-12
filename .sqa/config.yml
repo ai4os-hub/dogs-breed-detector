@@ -1,6 +1,6 @@
 # .sqa/config.yml - jenkins-pipeline-library configuration file
 sqa_criteria:
-  qc_style:
+  QC.Sty:
     repos:
       dogs_breed_det:
         container: dogs-testing
@@ -8,7 +8,7 @@ sqa_criteria:
           tox_file: tox.ini
           testenv:
             - qc.sty
-  qc_coverage:
+  QC.Uni:
     repos:
       dogs_breed_det:
         container: dogs-testing
@@ -16,7 +16,7 @@ sqa_criteria:
           tox_file: tox.ini
           testenv:
             - qc.cov
-  qc_security:
+  QC.Sec:
     repos:
       dogs_breed_det:
         container: dogs-testing

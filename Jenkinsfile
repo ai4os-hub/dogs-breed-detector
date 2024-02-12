@@ -6,7 +6,7 @@ pipeline {
     agent any
 
     stages {
-        stage('dogs_breed_det testing') {
+        stage('Application testing') {
             steps {
                 script {
                     projectConfig = pipelineConfig()
@@ -16,12 +16,15 @@ pipeline {
                 sh 'ls -la $WORKSPACE'
             }
         }
-        stage('Publish results in Jenkins and CleanUp') {
+        // (optional) Publish testing results in Jenkins
+        stage('Publish results in Jenkins') {
             steps { 
                 script {
                     // file locations are defined in tox.ini
                     // publish results of the style analysis
-                    recordIssues(tools: [flake8(pattern: 'flake8.log', name: 'PEP8 report', id: "flake8_pylint")])
+                    recordIssues(tools: [flake8(pattern: 'flake8.log',
+                                         name: 'PEP8 report',
+                                         id: "flake8_pylint")])
                     // publish results of the coverage test
                     publishHTML([allowMissing: false, 
                                  alwaysLinkToLastBuild: false, 
@@ -41,14 +44,15 @@ pipeline {
                     sh 'ls -la $WORKSPACE'
                 }
             }
-            post {
-                cleanup {
-                    cleanWs()
-                    script {
-                       sh 'ls -la $WORKSPACE'
-                    }
-                }
-            }
         }
+    }
+    post {
+        // Clean after build
+        always {
+            cleanWs()
+        }
+        script {
+            sh 'ls -la $WORKSPACE'
+        }     
     }
 }
