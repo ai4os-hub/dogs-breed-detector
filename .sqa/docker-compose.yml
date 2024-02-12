@@ -1,9 +1,10 @@
 version: "3.6"
 
 services:
-  dogs-testing:
+  dogs_breed_det-testing:
     image: "indigodatacloud/ci-images:python3.6"
-    container_name: dogs-testing
+    container_name: "${BUILD_TAG}"
+    hostname: "${BUILD_TAG}"
     working_dir: /srv
     volumes:
       - type: bind

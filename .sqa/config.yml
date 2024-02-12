@@ -3,7 +3,7 @@ sqa_criteria:
   qc_style:
     repos:
       dogs_breed_det:
-        container: dogs-testing
+        container: dogs_breed_det-testing
         tox:
           tox_file: tox.ini
           testenv:
@@ -11,7 +11,7 @@ sqa_criteria:
   qc_coverage:
     repos:
       dogs_breed_det:
-        container: dogs-testing
+        container: dogs_breed_det-testing
         tox:
           tox_file: tox.ini
           testenv:
@@ -19,7 +19,7 @@ sqa_criteria:
   qc_security:
     repos:
       dogs_breed_det:
-        container: dogs-testing
+        container: dogs_breed_det-testing
         tox:
           tox_file: tox.ini
           testenv:
