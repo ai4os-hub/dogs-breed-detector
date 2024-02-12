@@ -50,9 +50,9 @@ pipeline {
         // Clean after build
         always {
             cleanWs()
-        }
-        script {
-            sh 'ls -la $WORKSPACE'
-        }     
+            script {
+                sh 'ls -la $WORKSPACE'
+            } 
+        }    
     }
 }
