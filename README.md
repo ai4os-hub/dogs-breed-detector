@@ -3,6 +3,7 @@ Dog's breed detector
 
 [![Build Status](https://jenkins.services.ai4os.eu/buildStatus/icon?job=AI4OS-hub/dogs_breed_det/main/)](https://jenkins.services.ai4os.eu/job/AI4OS-hub/job/dogs_breed_det/job/main/)
 
+[![Build Status](https://jenkins.o3as.fedcloud.eu/buildStatus/icon?job=AI4OS-Hub%2Fdogs_breed_det%2Fmain)](https://jenkins.o3as.fedcloud.eu/job/AI4OS-Hub/job/dogs_breed_det/job/main/)
 
 <img src="https://jenkins.services.ai4os.eu/buildStatus/icon?job=AI4OS-hub/dogs_breed_det/main/" alt="BuildStatus">
 
