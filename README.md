@@ -2,7 +2,7 @@ Dog's breed detector
 ==============================
 
 [![Build Status](https://jenkins.services.ai4os.eu/buildStatus/icon?job=AI4OS-hub/dogs_breed_det/main/)](https://jenkins.services.ai4os.eu/job/AI4OS-hub/job/dogs_breed_det/job/main/)
-
+[![Build Status](https://jenkins.services.ai4os.eu/job/AI4OS-hub/job/dogs_breed_det/job/main/badge/icon)](https://jenkins.services.ai4os.eu/job/AI4OS-hub/job/dogs_breed_det/job/main/)
 
 An application to identify Dog's breed, "Dogs breed detector", using deep learning. **133** breeds are known.
 
