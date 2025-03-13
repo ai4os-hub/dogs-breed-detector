@@ -3,8 +3,8 @@ version: "3.6"
 services:
   thisrepo-testing:
     image: "indigodatacloud/ci-images:python3.6"
-    container_name: "${BUILD_TAG}"
-    hostname: "${BUILD_TAG}"
+    container_name: "${SQA_CONTAINER_NAME}"
+    hostname: "${SQA_CONTAINER_NAME}"
     working_dir: /srv
     command: >
       sh -c "git config --global --add safe.directory /srv &&
